@@ -3,7 +3,7 @@
     <a href="{{route('dashboard')}}" class="brand-link">
         <img src="{{asset('img/t.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">T-Store</span>
+        <span class="brand-text font-weight-light">T-Shop</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,10 +11,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{asset('img/foto.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{asset('img/user.png')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Akmal Ryandi</a>
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
             </div>
         </div>
 

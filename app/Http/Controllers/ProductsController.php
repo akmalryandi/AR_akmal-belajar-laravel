@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
     public function index(){
-		$products = DB::table('product_view')->orderBy('id', 'ASC')->paginate(3);
-		return view('products.index',['products' => $products]);
+        $products = Product::join('product_categories', 'products.category_id', '=', 'product_categories.id')
+            ->select('products.*', 'product_categories.category_name')
+            ->paginate(3);
+        return view('products.index', ['products' => $products]);
     }
     public function create(){
         $categories = DB::table('product_categories')->get();
