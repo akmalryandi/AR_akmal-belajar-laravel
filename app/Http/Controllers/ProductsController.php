@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ProductsController extends Controller
 {
@@ -22,8 +23,37 @@ class ProductsController extends Controller
 
     public function store(Request $request){
 
+        $rules = [
+            'product_name' => 'required',
+            'product_code' => 'required',
+            'category' => 'required|exists:product_categories,id',
+            'stock' => 'required|numeric',
+            'price' => 'required|numeric',
+            'description' => 'required',
+        ];
+
+        $messages = [
+            'product_name.required' => 'Nama produk harus diisi.',
+            'product_code.required' => 'Kode produk harus diisi.',
+            'category.required' => 'Kategori produk harus dipilih.',
+            'category.exists' => 'Kategori produk tidak valid.',
+            'stock.required' => 'Stok produk harus diisi.',
+            'stock.numeric' => 'Stok produk harus berupa angka.',
+            'price.required' => 'Harga produk harus diisi.',
+            'price.numeric' => 'Harga produk harus berupa angka.',
+            'description.required' => 'Deskripsi produk harus diisi.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect(route('products.create'))
+                ->withErrors($validator)
+                ->withInput();
+        }
+
 		DB::table('products')->insert([
-			'product_name' => $request->nama,
+			'product_name' => $request->product_code,
 			'description' => $request->description,
 			'price' => $request->price,
 			'stock' => $request->stock,
@@ -41,8 +71,39 @@ class ProductsController extends Controller
 	}
 
     public function update(Request $request){
+
+         $rules = [
+            'product_name' => 'required',
+            'product_code' => 'required',
+            'category' => 'required|exists:product_categories,id',
+            'stock' => 'required|numeric',
+            'price' => 'required|numeric',
+            'description' => 'required',
+        ];
+
+        $messages = [
+            'product_name.required' => 'Nama produk harus diisi.',
+            'product_code.required' => 'Kode produk harus diisi.',
+            'category.required' => 'Kategori produk harus dipilih.',
+            'category.exists' => 'Kategori produk tidak valid.',
+            'stock.required' => 'Stok produk harus diisi.',
+            'stock.numeric' => 'Stok produk harus berupa angka.',
+            'price.required' => 'Harga produk harus diisi.',
+            'price.numeric' => 'Harga produk harus berupa angka.',
+            'description.required' => 'Deskripsi produk harus diisi.',
+        ];
+
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect(route('products.edit', $request->id))
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         DB::table('products')->where('id',$request->id)->update([
-            'product_name' => $request->nama,
+            'product_name' => $request->product_name,
 			'description' => $request->description,
 			'price' => $request->price,
 			'stock' => $request->stock,
