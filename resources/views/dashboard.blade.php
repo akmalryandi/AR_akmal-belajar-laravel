@@ -52,7 +52,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>Rp. {{ number_format($totalPrice, 0, ',', '.') }}</h3>
+                            <h3>{{ number_format($totalPrice, 0, ',', '.') }}</h3>
 
                             <p>Jumlah total harga produk</p>
                         </div>

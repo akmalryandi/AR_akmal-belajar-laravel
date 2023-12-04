@@ -6,26 +6,27 @@
             <h3 class="card-title">Data Users</h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body overflow-scroll">
-            <form id="search" method="get" action="{{ route('users') }}">
-                <div class="d-flex bd-highlight mb-3">
-                    <div class="bd-highlight me-1">
-                        <input type="text" name="search" class="form-control float-right" placeholder="Search"
-                            autocomplete="off">
-                    </div>
-                    <div class="bd-highlight">
-                        <button type="submit" name="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+        <form id="search" method="get" action="{{ route('users') }}">
+            <div class="d-flex bd-highlight ms-3 mt-3">
+                <div class="bd-highlight me-1">
+                    <input type="text" name="search" class="form-control float-right" placeholder="Search"
+                        autocomplete="off">
                 </div>
-            </form>
-            <table id="example1" class="table table-bordered table-striped mb-3">
+                <div class="bd-highlight">
+                    <button type="submit" name="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="card-body">
+
+            <table id="example1" class="table table-bordered table-responsive table-striped mb-3">
                 <thead>
                     <tr>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Phone</th>
+                        <th>No Telp</th>
                         <th>Username</th>
                         @if (Auth::user()->role == 'admin')
                             <th>Password</th>

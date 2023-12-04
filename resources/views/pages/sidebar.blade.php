@@ -50,13 +50,39 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('customers')}}" class="nav-link {{request()->is('customers') ? 'active' : ''}}">
+                        <i class="bi bi-people me-2"></i>
+                        <p>
+                            Customers
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('sales')}}" class="nav-link {{request()->is('sales') ? 'active' : ''}}">
+                        <i class="bi bi-basket-fill me-2"></i>
+                        <p>
+                            Sales
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('salesdetail')}}" class="nav-link {{request()->is('salesdetail') ? 'active' : ''}}">
+                        <i class="bi bi-receipt me-2"></i>
+                        <p>
+                            Sales Detail
+                        </p>
+                    </a>
+                </li>
+                @if (Auth::user()->role == 'admin')
+                <li class="nav-item">
                     <a href="{{route('users')}}" class="nav-link {{request()->is('users') ? 'active' : ''}}">
-                        <i class="bi bi-people-fill"></i>
+                        <i class="bi bi-people-fill me-2"></i>
                         <p>
                             Users
                         </p>
                     </a>
                 </li>
+                @endif
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

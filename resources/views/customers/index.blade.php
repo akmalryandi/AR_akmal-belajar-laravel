@@ -3,13 +3,13 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Category</h3>
+            <h3 class="card-title">Data Customers</h3>
         </div>
-        <form id="search" method="get" action="{{ route('category') }}">
+        <form id="search" method="get" action="{{ route('customers') }}">
             <div class="d-flex bd-highlight mt-3">
                 <div class="me-auto bd-highlight">
                     @if (Auth::user()->role == 'admin')
-                        <a href="{{ route('category.create') }}" type="button" class="btn btn-primary ms-3"><i
+                        <a href="{{ route('customers.create') }}" type="button" class="btn btn-primary ms-3"><i
                                 class="bi bi-plus-lg"></i></a>
                     @endif
                 </div>
@@ -25,28 +25,34 @@
                 </div>
             </div>
         </form>
-        <!-- /.card-header -->
         <div class="card-body">
-            <table id="example1" class="table table-bordered  table-striped mb-3">
+            <table id="example1" class="table table-bordered table-responsive table-striped mb-3">
                 <thead>
                     <tr>
-                        <th>Nama</th>
-                        <th>Status</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th style="width: 10%;">Email</th>
+                        <th style="width: 44%;">Address</th>
                         @if (Auth::user()->role == 'admin')
                             <th>Action</th>
                         @endif
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($category as $data)
+                    @foreach ($customers as $data)
                         <tr>
-                            <td>{{ $data->category_name }}</td>
-                            <td>{{ $data->is_active }}</td>
+
+                            <td>{{ $data->code_customer }}</td>
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->phone_number }}</td>
+                            <td style="width: 10%;">{{ $data->email }}</td>
+                            <td style="width: 44%;">{{ $data->address }}</td>
                             @if (Auth::user()->role == 'admin')
-                                <td><a href="{{ route('category.edit', ['id' => $data->id]) }}"> <button
-                                            class="btn btn-secondary m-2"><i class="bi bi-pencil-square"></i></button></a>
-                                    <a href="{{ route('category.delete', ['id' => $data->id]) }}"> <button
-                                            class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></a>
+                                <td><a href="{{ route('customers.edit', ['id' => $data->id]) }}"> <button
+                                            class="btn btn-secondary mb-1"><i class="bi bi-pencil-square"></i></button></a>
+                                    <a href="{{ route('customers.delete', ['id' => $data->id]) }}"> <button
+                                            class="btn btn-danger mb-1"><i class="bi bi-trash3-fill"></i></button></a>
                                 </td>
                             @endif
                         </tr>
@@ -54,7 +60,7 @@
             </table>
 
             {{-- Pagination --}}
-            {{ $category->links('pagination::bootstrap-5') }}
+            {{ $customers->links('pagination::bootstrap-5') }}
         </div>
         <!-- /.card-body -->
     </div>

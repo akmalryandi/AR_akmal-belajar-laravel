@@ -15,7 +15,7 @@ class CategoryController extends Controller
 
         $product_categories = Category::when($search, function ($query) use ($search) {
             return $query->where('category_name', 'like', '%' . $search . '%');
-        })->paginate(3);
+        })->paginate(4);
         return view('category.index', ['category' => $product_categories]);
     }
     public function create()

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Log in</title>
+    <title>Toy Shop | Log in</title>
+    <link rel="icon" href="{{asset('img/t.ico')}}" type="image/x-icon">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -56,12 +57,9 @@
 
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
-                            </div>
+                            <p class="mb-0">
+                                <a href="{{ route('register') }}" class="text-center">Register</a>
+                            </p>
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
@@ -70,13 +68,6 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
-                <p class="mb-1">
-                    <a href="#">Lupa Password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="{{ route('register') }}" class="text-center">Register</a>
-                </p>
             </div>
             <!-- /.login-card-body -->
         </div>

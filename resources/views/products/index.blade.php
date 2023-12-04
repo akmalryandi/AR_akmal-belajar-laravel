@@ -5,29 +5,28 @@
         <div class="card-header">
             <h3 class="card-title">Data Products</h3>
         </div>
-
-        <div class="card-body">
-            <form id="search" method="get" action="{{ route('products') }}">
-                <div class="d-flex bd-highlight">
-                    <div class="me-auto bd-highlight">
-                        @if (Auth::user()->role == 'admin')
-                            <a href="{{ route('products.create') }}" type="button" class="btn btn-primary mb-2"><i
-                                    class="bi bi-plus-lg"></i></a>
-                        @endif
-                    </div>
-
-                    <div class="me-1 bd-highlight">
-                        <input type="text" name="search" class="form-control float-right" placeholder="Search"
-                            autocomplete="off">
-                    </div>
-                    <div class="bd-highlight">
-                        <button type="submit" name="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+        <form id="search" method="get" action="{{ route('products') }}">
+            <div class="d-flex bd-highlight mt-3">
+                <div class="me-auto bd-highlight">
+                    @if (Auth::user()->role == 'admin')
+                        <a href="{{ route('products.create') }}" type="button" class="btn btn-primary ms-3"><i
+                                class="bi bi-plus-lg"></i></a>
+                    @endif
                 </div>
-            </form>
-            <table id="example1" class="table table-bordered table-striped mb-3">
+
+                <div class="bd-highlight me-1">
+                    <input type="text" name="search" class="form-control float-right" placeholder="Search"
+                        autocomplete="off">
+                </div>
+                <div class="bd-highlight me-3">
+                    <button type="submit" name="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-responsive table-striped mb-3">
                 <thead>
                     <tr>
                         <th>Nama</th>
@@ -54,8 +53,8 @@
                             <td>{{ $data->category_name }}</td>
                             <td>
                                 @if ($data->image)
-                                    <img class="rounded mb-2" width="100" src="{{ asset(json_decode($data->image)[0]) }}"
-                                        alt="{{ $data->product_name }}">
+                                    <img class="rounded mb-2" width="100"
+                                        src="{{ asset(json_decode($data->image)[0]) }}" alt="{{ $data->product_name }}">
                                 @else
                                     No Image
                                 @endif

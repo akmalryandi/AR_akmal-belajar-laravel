@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>T-Shop | Registration</title>
+    <title>Toy Shop | Registration</title>
+    <link rel="icon" href="{{asset('img/t.ico')}}" type="image/x-icon">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -81,7 +82,7 @@
 
 
 
-                <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+                <a href="{{ route('login') }}" class="text-center">Saya sudah punya akun</a>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

@@ -26,7 +26,7 @@ class ProductsController extends Controller
                     ->orWhere('price', 'like', '%' . $search . '%');
             })
             ->orderBy('id', 'asc')
-            ->paginate(3);
+            ->paginate(4);
         return view('products.index', ['products' => $products]);
     }
     public function create()

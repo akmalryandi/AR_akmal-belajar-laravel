@@ -17,7 +17,7 @@ class HomeController extends Controller
         $totalPrice = Product::sum('price');
         $totalStock = Product::sum('stock');
 
-        // Product stats Column and Bar
+        // Product stats Column
         $categories = Category::withCount('products')->get();
 
         // Price stats Pie
