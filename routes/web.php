@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,31 +20,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-
-
 Route::middleware(['guest'])->group(function () {
     Route::get('/biodata', [BiodataController::class, 'index']);
-    Route::get('/', [AuthController::class, 'index'])->name('login');
-    Route::post('/', [AuthController::class, 'login']);
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 });
 
 Route::get('/home', function () {
-    return redirect('dashboard'); });
+    return redirect('dashboard');
+});
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [HomeController::class, 'show'])->name('dashboard');
+    Route::get('/dashboard', [HomeController::class, 'productStats'])->name('dashboard');
     Route::get('/products', [ProductsController::class, 'index'])->name('products');
-    Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
-    Route::post('/products', [ProductsController::class, 'store'])->name('products.store');
-    Route::get('/products/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
-    Route::put('/customers/{id}', [ProductsController::class, 'update'])->name('products.update');
-    Route::get('/customers/delete/{id}', [ProductsController::class, 'destroy'])->name('products.delete');
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('/logout', [AuthController::class, 'logout']);
+
+    Route::middleware(['userAkses:admin'])->group(function () {
+        Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
+        Route::post('/products', [ProductsController::class, 'store'])->name('products.store');
+        Route::get('/products/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
+        Route::put('/products/{id}', [ProductsController::class, 'update'])->name('products.update');
+        Route::get('/products/delete/{id}', [ProductsController::class, 'destroy'])->name('products.delete');
+
+        Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+        Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
+        Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+        Route::put('/category/{id}', [CategoryController::class, 'update'])->name('category.update');
+        Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
+
+        Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::get('/users/delete/{id}', [UserController::class, 'destroy'])->name('users.delete');
+    });
 });
 
 

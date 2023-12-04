@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     function index() {
-        return view('login');
+        return view('auth.login');
     }
     function login(Request $request) {
         $request->validate([
@@ -29,6 +29,6 @@ class AuthController extends Controller
     }
     function logout(){
         Auth::logout();
-        return redirect('');
+        return redirect('login');
     }
 }

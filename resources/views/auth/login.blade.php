@@ -75,7 +75,7 @@
                     <a href="#">Lupa Password</a>
                 </p>
                 <p class="mb-0">
-                    <a href="register.php" class="text-center">Register</a>
+                    <a href="{{ route('register') }}" class="text-center">Register</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

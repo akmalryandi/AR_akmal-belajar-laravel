@@ -42,10 +42,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('category')}}" class="nav-link {{request()->is('category') ? 'active' : ''}}">
                         <i class="bi bi-list-ul me-2"></i>
                         <p>
                             Categories
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('users')}}" class="nav-link {{request()->is('users') ? 'active' : ''}}">
+                        <i class="bi bi-people-fill"></i>
+                        <p>
+                            Users
                         </p>
                     </a>
                 </li>

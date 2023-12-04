@@ -13,7 +13,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="POST" action="{{route("products.store")}}">
+            <form method="POST" action="{{route("products.store")}}" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -55,6 +55,11 @@
                                     <option value="{{ $data->id }}">{{ $data->category_name }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="gambar">Pilih gambar</label>
+                        <input type="file" required class="form-control" name="product_image[]" id="gambar" accept="image/*"
+                            multiple>
                     </div>
 
                 </div>

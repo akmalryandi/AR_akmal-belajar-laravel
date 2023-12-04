@@ -3,15 +3,15 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Products</h3>
+            <h3 class="card-title">Data Category</h3>
         </div>
-
+        <!-- /.card-header -->
         <div class="card-body">
-            <form id="search" method="get" action="{{ route('products') }}">
+            <form id="search" method="get" action="{{ route('category') }}">
                 <div class="d-flex bd-highlight">
                     <div class="me-auto bd-highlight">
                         @if (Auth::user()->role == 'admin')
-                            <a href="{{ route('products.create') }}" type="button" class="btn btn-primary mb-2"><i
+                            <a href="{{ route('category.create') }}" type="button" class="btn btn-primary mb-2"><i
                                     class="bi bi-plus-lg"></i></a>
                         @endif
                     </div>
@@ -31,39 +31,21 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        <th style="width: 15%;">Deskripsi</th>
-                        <th>Harga</th>
-                        <th>Stok</th>
-                        <th>Kode Produk</th>
-                        <th>Kategori</th>
-                        <th>Gambar</th>
+                        <th>Status</th>
                         @if (Auth::user()->role == 'admin')
                             <th>Action</th>
                         @endif
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($products as $data)
+                    @foreach ($category as $data)
                         <tr>
-
-                            <td>{{ $data->product_name }}</td>
-                            <td style="width: 15%;">{{ $data->description }}</td>
-                            <td>{{ $data->price }}</td>
-                            <td>{{ $data->stock }}</td>
-                            <td>{{ $data->product_code }}</td>
                             <td>{{ $data->category_name }}</td>
-                            <td>
-                                @if ($data->image)
-                                    <img class="rounded mb-2" width="100" src="{{ asset(json_decode($data->image)[0]) }}"
-                                        alt="{{ $data->product_name }}">
-                                @else
-                                    No Image
-                                @endif
-                            </td>
+                            <td>{{ $data->is_active }}</td>
                             @if (Auth::user()->role == 'admin')
-                                <td><a href="{{ route('products.edit', ['id' => $data->id]) }}"> <button
-                                            class="btn btn-secondary"><i class="bi bi-pencil-square"></i></button></a>
-                                    <a href="{{ route('products.delete', ['id' => $data->id]) }}"> <button
+                                <td><a href="{{ route('category.edit', ['id' => $data->id]) }}"> <button
+                                            class="btn btn-secondary m-2"><i class="bi bi-pencil-square"></i></button></a>
+                                    <a href="{{ route('category.delete', ['id' => $data->id]) }}"> <button
                                             class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></a>
                                 </td>
                             @endif
@@ -72,7 +54,7 @@
             </table>
 
             {{-- Pagination --}}
-            {{ $products->links('pagination::bootstrap-5') }}
+            {{ $category->links('pagination::bootstrap-5') }}
         </div>
         <!-- /.card-body -->
     </div>
