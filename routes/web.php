@@ -5,6 +5,7 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SalesController;
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [HomePageController::class, 'index']);
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/biodata', [BiodataController::class, 'index']);

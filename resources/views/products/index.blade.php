@@ -29,13 +29,13 @@
             <table id="example1" class="table table-bordered table-responsive table-striped mb-3">
                 <thead>
                     <tr>
-                        <th>Nama</th>
-                        <th style="width: 15%;">Deskripsi</th>
-                        <th>Harga</th>
-                        <th>Stok</th>
-                        <th>Kode Produk</th>
-                        <th>Kategori</th>
-                        <th>Gambar</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th style="width: 15%;">Description</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Product Code</th>
+                        <th>Category</th>
                         @if (Auth::user()->role == 'admin')
                             <th>Action</th>
                         @endif
@@ -44,21 +44,20 @@
                 <tbody>
                     @foreach ($products as $data)
                         <tr>
-
+                            <td>
+                                @if ($data->image)
+                                    <img class="rounded mb-2" width="100" src="{{ asset(json_decode($data->image)[0]) }}"
+                                        alt="{{ $data->product_name }}">
+                                @else
+                                    No Image
+                                @endif
+                            </td>
                             <td>{{ $data->product_name }}</td>
                             <td style="width: 15%;">{{ $data->description }}</td>
                             <td>{{ $data->price }}</td>
                             <td>{{ $data->stock }}</td>
                             <td>{{ $data->product_code }}</td>
                             <td>{{ $data->category_name }}</td>
-                            <td>
-                                @if ($data->image)
-                                    <img class="rounded mb-2" width="100"
-                                        src="{{ asset(json_decode($data->image)[0]) }}" alt="{{ $data->product_name }}">
-                                @else
-                                    No Image
-                                @endif
-                            </td>
                             @if (Auth::user()->role == 'admin')
                                 <td><a href="{{ route('products.edit', ['id' => $data->id]) }}"> <button
                                             class="btn btn-secondary"><i class="bi bi-pencil-square"></i></button></a>
