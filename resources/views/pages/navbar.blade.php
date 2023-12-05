@@ -22,6 +22,9 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <div class="dropdown-divider"></div>
                 <div class="dropdown-divider"></div>
+                <a href="{{route('homepage')}}" class="dropdown-item">
+                    <i class="bi bi-house"></i> Home
+                </a>
                 <a href="/logout" class="dropdown-item">
                     <i class="bi bi-box-arrow-right"></i> Logout
                 </a>

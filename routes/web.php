@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [HomePageController::class, 'index']);
+Route::get('/', [HomePageController::class, 'index'])->name('homepage');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/biodata', [BiodataController::class, 'index']);
@@ -47,13 +47,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/salesdetail', [SalesDetailsController::class, 'index'])->name('salesdetail');
     Route::get('/logout', [AuthController::class, 'logout']);
 
-    Route::middleware(['userAkses:admin'])->group(function () {
-        Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
-        Route::post('/products', [ProductsController::class, 'store'])->name('products.store');
-        Route::get('/products/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
-        Route::put('/products/{id}', [ProductsController::class, 'update'])->name('products.update');
-        Route::get('/products/delete/{id}', [ProductsController::class, 'destroy'])->name('products.delete');
+    Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
+    Route::post('/products', [ProductsController::class, 'store'])->name('products.store');
+    Route::get('/products/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{id}', [ProductsController::class, 'update'])->name('products.update');
+    Route::get('/products/delete/{id}', [ProductsController::class, 'destroy'])->name('products.delete');
 
+    Route::middleware(['userAkses:admin'])->group(function () {
         Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
         Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
         Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');

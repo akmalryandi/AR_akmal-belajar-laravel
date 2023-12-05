@@ -36,9 +36,7 @@
                         <th>Stock</th>
                         <th>Product Code</th>
                         <th>Category</th>
-                        @if (Auth::user()->role == 'admin')
-                            <th>Action</th>
-                        @endif
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,13 +56,11 @@
                             <td>{{ $data->stock }}</td>
                             <td>{{ $data->product_code }}</td>
                             <td>{{ $data->category_name }}</td>
-                            @if (Auth::user()->role == 'admin')
                                 <td><a href="{{ route('products.edit', ['id' => $data->id]) }}"> <button
                                             class="btn btn-secondary"><i class="bi bi-pencil-square"></i></button></a>
                                     <a href="{{ route('products.delete', ['id' => $data->id]) }}"> <button
                                             class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></a>
                                 </td>
-                            @endif
                         </tr>
                     @endforeach
             </table>

@@ -7,7 +7,7 @@
                 <!-- left column -->
                 <div class="col-md-12 mt-3">
                     <!-- general form elements -->
-                    <div class="card card-primary">
+                    <div class="card card-secondary">
                         <div class="card-header">
                             <h3 class="card-title">Edit Sales</h3>
                         </div>
@@ -76,7 +76,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button name="submit" type="submit" class="btn btn-primary">Update</button>
+                                <button name="submit" type="submit" class="btn btn-secondary">Update</button>
                                 <a href="{{ route('sales') }}" class="btn btn-danger">Cancel</a>
                             </div>
                         </form>
