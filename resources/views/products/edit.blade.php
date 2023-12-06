@@ -64,8 +64,8 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="gambar">Pilih gambar</label>
-                                    <input type="file" required class="form-control" name="product_image[]"
-                                        id="gambar" accept="image/*" multiple>
+                                    <input type="file" class="form-control" name="product_image[]"
+                                        id="gambar" accept="image/*" multiple value="{{$product->image}}" required>
                                 </div>
 
                             </div>

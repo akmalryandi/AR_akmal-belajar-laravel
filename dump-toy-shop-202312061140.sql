@@ -211,7 +211,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_category_id_foreign` (`category_id`),
   CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `product_categories` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -220,7 +220,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Action Figure Superhero Batman',1,'SF001','active',NULL,NULL,'Action figure superhero koleksi',29000.00,'PCS',NULL,50,'[\"uploads\\/1701715716_batman.jpg\"]'),(2,'Set Catur',2,'CH001','active',NULL,NULL,'Permainan catur klasik',19000.00,'PCS',NULL,30,'[\"uploads\\/1701716799_catur.jpg\"]'),(3,'Boneka Barbie',3,'BD001','active',NULL,NULL,'Boneka Barbie populer untuk anak-anak',39000.00,'PCS',NULL,40,'[\"uploads\\/1701716816_barbie.jpg\"]'),(4,'Kit Sains',4,'SK001','active',NULL,NULL,'Kit sains edukatif untuk eksperimen',24000.00,'PCS',NULL,20,'[\"uploads\\/1701716832_download.jpg\"]'),(5,'Set Balok Bangunan',5,'BB001','active',NULL,NULL,'Set balok bangunan kreatif untuk anak-anak',14000.00,'PCS',NULL,60,'[\"uploads\\/1701716843_balok.jpg\"]'),(6,'Action Figure Robot',1,'SF002','active',NULL,NULL,'Action figure robot interaktif',34000.00,'PCS',NULL,45,'[\"uploads\\/1701716856_robot.jpg\"]'),(7,'Permainan Puzzle',2,'PG001','active',NULL,NULL,'Permainan teka-teki yang menarik untuk semua usia',22000.00,'PCS',NULL,25,'[\"uploads\\/1701716869_puzzel.jpg\"]'),(8,'Boneka Teddy Bear',3,'PTB001','active',NULL,NULL,'Boneka teddy bear yang lembut dan lucu',19000.00,'PCS',NULL,35,'[\"uploads\\/1701716884_Boneka Teddy Bear.jpg\"]'),(9,'Kit Pembelajaran Matematika',4,'MLK001','active',NULL,NULL,'Pelajari matematika dengan kit interaktif ini',27000.00,'PCS',NULL,15,'[\"uploads\\/1701716896_Kit Pembelajaran Matematika.jpg\"]'),(10,'LEGO Ninja',5,'LC001','active',NULL,NULL,'LEGO NinjaGo',49000.00,'PCS',NULL,55,'[\"uploads\\/1701716788_ninjaSlide.png\"]');
+INSERT INTO `products` VALUES (1,'Action Figure Superhero Batman',1,'SF001','active',NULL,NULL,'Action figure superhero koleksi',29000.00,'PCS',NULL,50,'[\"uploads\\/1701715716_batman.jpg\"]'),(3,'Boneka Barbie',3,'BD001','active',NULL,NULL,'Boneka Barbie populer untuk anak-anak',39000.00,'PCS',NULL,40,'[\"uploads\\/1701815853_barbie.jpg\"]'),(4,'Kit Sains',4,'SK001','active',NULL,NULL,'Kit sains edukatif untuk eksperimen',24000.00,'PCS',NULL,20,'[\"uploads\\/1701816023_kit.jpg\"]'),(5,'Set Balok Bangunan',5,'BB001','active',NULL,NULL,'Set balok bangunan kreatif untuk anak-anak',14000.00,'PCS',NULL,60,'[\"uploads\\/1701805754_balok.jpg\"]'),(6,'Action Figure Robot',1,'SF002','active',NULL,NULL,'Action figure robot interaktif',34000.00,'PCS',NULL,45,'[\"uploads\\/1701837186_HTB18f9kuXOWBuNjy0Fi760FxVXaZ.png_720x720q50.png\"]'),(7,'Permainan Puzzle',2,'PG001','active',NULL,NULL,'Permainan teka-teki yang menarik untuk semua usia',22000.00,'PCS',NULL,25,'[\"uploads\\/1701716869_puzzel.jpg\"]'),(8,'Boneka Teddy Bear',3,'PTB001','active',NULL,NULL,'Boneka teddy bear yang lembut dan lucu',19000.00,'PCS',NULL,35,'[\"uploads\\/1701716884_Boneka Teddy Bear.jpg\"]'),(9,'Kit Pembelajaran Matematika',4,'MLK001','active',NULL,NULL,'Pelajari matematika dengan kit interaktif ini',27000.00,'PCS',NULL,15,'[\"uploads\\/1701716896_Kit Pembelajaran Matematika.jpg\"]'),(10,'LEGO Ninja',5,'LC001','active',NULL,NULL,'LEGO NinjaGo',49000.00,'PCS',NULL,55,'[\"uploads\\/1701716788_ninjaSlide.png\"]'),(11,'Set Catur',2,'CH001','active',NULL,NULL,'Permainan Catur Klasik',20000.00,'PCS',NULL,43,'[\"uploads\\/1701805141_catur.jpg\"]');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -255,7 +255,7 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-INSERT INTO `sales` VALUES (1,'S001','2023-12-01',150.00,165.00,NULL,NULL,3,1,'Promo Akhir Tahun'),(2,'S002','2023-12-02',75.50,82.25,NULL,NULL,2,3,'Promo Penutupan Tahun'),(3,'S003','2023-12-03',120.75,132.82,NULL,NULL,4,2,'Penawaran Khusus Akhir Pekan'),(4,'S004','2023-12-04',45.25,49.78,NULL,NULL,1,5,'Flash Sale'),(5,'S005','2023-12-05',200.00,220.00,NULL,NULL,5,4,'Promo Pembukaan');
+INSERT INTO `sales` VALUES (1,'S001','2023-12-01',150.00,165.00,NULL,NULL,3,1,'Promo Akhir Tahun'),(2,'S002','2023-12-02',75.50,82.25,NULL,NULL,2,3,'Promo Penutupan Tahun'),(3,'S003','2023-12-03',120.75,132.82,NULL,NULL,6,2,'Penawaran Khusus Akhir Pekan'),(4,'S004','2023-12-04',45.25,49.78,NULL,NULL,1,5,'Flash Sale'),(5,'S005','2023-12-05',200.00,220.00,NULL,NULL,5,4,'Promo Pembukaan');
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -287,7 +287,7 @@ CREATE TABLE `sales_details` (
 
 LOCK TABLES `sales_details` WRITE;
 /*!40000 ALTER TABLE `sales_details` DISABLE KEYS */;
-INSERT INTO `sales_details` VALUES (1,1,1,2,NULL,NULL),(2,1,3,1,NULL,NULL),(3,2,5,3,NULL,NULL),(4,2,8,2,NULL,NULL),(5,3,2,4,NULL,NULL),(6,3,4,2,NULL,NULL),(7,4,7,1,NULL,NULL),(8,5,6,5,NULL,NULL),(9,5,10,3,NULL,NULL),(10,3,3,8,NULL,NULL);
+INSERT INTO `sales_details` VALUES (1,1,1,2,NULL,NULL),(2,1,3,1,NULL,NULL),(3,2,5,3,NULL,NULL),(4,2,8,2,NULL,NULL),(6,3,4,2,NULL,NULL),(7,4,7,1,NULL,NULL),(8,5,6,5,NULL,NULL);
 /*!40000 ALTER TABLE `sales_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -339,4 +339,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-05  2:12:19
+-- Dump completed on 2023-12-06 11:40:23

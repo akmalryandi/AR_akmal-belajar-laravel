@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Toy Shop</title>
+  <title>Admin Toy Shop</title>
   <link rel="icon" href="{{asset('img/t.ico')}}" type="image/x-icon">
 
   {{-- Bootstraps --}}
