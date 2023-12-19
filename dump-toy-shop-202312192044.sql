@@ -220,7 +220,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Action Figure Superhero Batman',1,'SF001','active',NULL,NULL,'Action figure superhero koleksi',29000.00,'PCS',NULL,50,'[\"uploads\\/1701715716_batman.jpg\"]'),(3,'Boneka Barbie',3,'BD001','active',NULL,NULL,'Boneka Barbie populer untuk anak-anak',39000.00,'PCS',NULL,40,'[\"uploads\\/1701815853_barbie.jpg\"]'),(4,'Kit Sains',4,'SK001','active',NULL,NULL,'Kit sains edukatif untuk eksperimen',24000.00,'PCS',NULL,20,'[\"uploads\\/1701816023_kit.jpg\"]'),(5,'Set Balok Bangunan',5,'BB001','active',NULL,NULL,'Set balok bangunan kreatif untuk anak-anak',14000.00,'PCS',NULL,60,'[\"uploads\\/1701805754_balok.jpg\"]'),(6,'Action Figure Robot',1,'SF002','active',NULL,NULL,'Action figure robot interaktif',34000.00,'PCS',NULL,45,'[\"uploads\\/1701837186_HTB18f9kuXOWBuNjy0Fi760FxVXaZ.png_720x720q50.png\"]'),(7,'Permainan Puzzle',2,'PG001','active',NULL,NULL,'Permainan teka-teki yang menarik untuk semua usia',22000.00,'PCS',NULL,25,'[\"uploads\\/1701716869_puzzel.jpg\"]'),(8,'Boneka Teddy Bear',3,'PTB001','active',NULL,NULL,'Boneka teddy bear yang lembut dan lucu',19000.00,'PCS',NULL,35,'[\"uploads\\/1701716884_Boneka Teddy Bear.jpg\"]'),(9,'Kit Pembelajaran Matematika',4,'MLK001','active',NULL,NULL,'Pelajari matematika dengan kit interaktif ini',27000.00,'PCS',NULL,15,'[\"uploads\\/1701716896_Kit Pembelajaran Matematika.jpg\"]'),(10,'LEGO Ninja',5,'LC001','active',NULL,NULL,'LEGO NinjaGo',49000.00,'PCS',NULL,55,'[\"uploads\\/1701716788_ninjaSlide.png\"]'),(11,'Set Catur',2,'CH001','active',NULL,NULL,'Permainan Catur Klasik',20000.00,'PCS',NULL,43,'[\"uploads\\/1701805141_catur.jpg\"]');
+INSERT INTO `products` VALUES (1,'Action Figure Superhero Batman',1,'SF001','active',NULL,NULL,'Action figure superhero koleksi',29000.00,'PCS',NULL,50,'[\"uploads\\/1701715716_batman.jpg\"]'),(3,'Boneka Barbie',3,'BD001','active',NULL,NULL,'Boneka Barbie populer untuk anak-anak',39000.00,'PCS',NULL,40,'[\"uploads\\/1701815853_barbie.jpg\"]'),(4,'Kit Sains',4,'SK001','active',NULL,NULL,'Kit sains edukatif untuk eksperimen',24000.00,'PCS',NULL,20,'[\"uploads\\/1701816023_kit.jpg\"]'),(5,'Set Balok Bangunan',5,'BB001','active',NULL,NULL,'Set balok bangunan kreatif untuk anak-anak',14000.00,'PCS',NULL,60,'[\"uploads\\/1701840830_balok.jpg\"]'),(6,'Action Figure Robot',1,'SF002','active',NULL,NULL,'Action figure robot interaktif',34000.00,'PCS',NULL,45,'[\"uploads\\/1701837186_HTB18f9kuXOWBuNjy0Fi760FxVXaZ.png_720x720q50.png\"]'),(7,'Permainan Puzzle',2,'PG001','active',NULL,NULL,'Permainan teka-teki yang menarik untuk semua usia',22000.00,'PCS',NULL,25,'[\"uploads\\/1701716869_puzzel.jpg\"]'),(8,'Boneka Teddy Bear',3,'PTB001','active',NULL,NULL,'Boneka teddy bear yang lembut dan lucu',19000.00,'PCS',NULL,35,'[\"uploads\\/1701716884_Boneka Teddy Bear.jpg\"]'),(9,'Kit Pembelajaran Matematika',4,'MLK001','active',NULL,NULL,'Pelajari matematika dengan kit interaktif ini',27000.00,'PCS',NULL,15,'[\"uploads\\/1701716896_Kit Pembelajaran Matematika.jpg\"]'),(10,'LEGO Ninja',5,'LC001','active',NULL,NULL,'LEGO NinjaGo',49000.00,'PCS',NULL,55,'[\"uploads\\/1701716788_ninjaSlide.png\"]'),(11,'Set Catur',2,'CH001','active',NULL,NULL,'Permainan Catur Klasik',20000.00,'PCS',NULL,43,'[\"uploads\\/1701805141_catur.jpg\"]');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,7 +322,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'akmal','akmal@gmail.com','089688880608','089688880608','$2y$12$6xgt3cIefxAYtthTRSA1EuMYo/rqporD..WmRSlpC/OMDqcLjjaJK',NULL,'2023-12-04 06:27:43','2023-12-04 06:27:43',NULL,NULL,'admin','active'),(2,'ryandi','ryan@gmail.com','089656560608','089656560608','$2y$12$hP06zbgYh82ogssFKbKxMOB.GrLbqpMMwRkJM.9sFG9FLckAXoheS',NULL,'2023-12-04 10:46:57','2023-12-04 10:46:57',NULL,NULL,'user','active');
+INSERT INTO `users` VALUES (1,'akmal','akmal@gmail.com','089688880608','akmal@gmail.com','$2y$12$6xgt3cIefxAYtthTRSA1EuMYo/rqporD..WmRSlpC/OMDqcLjjaJK',NULL,'2023-12-04 06:27:43','2023-12-04 06:27:43',NULL,NULL,'admin','active'),(2,'ryandi','ryan@gmail.com','089656560608','ryan@gmail.com','$2y$12$hP06zbgYh82ogssFKbKxMOB.GrLbqpMMwRkJM.9sFG9FLckAXoheS',NULL,'2023-12-04 10:46:57','2023-12-04 10:46:57',NULL,NULL,'user','active');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -339,4 +339,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-06 11:40:23
+-- Dump completed on 2023-12-19 20:44:19
