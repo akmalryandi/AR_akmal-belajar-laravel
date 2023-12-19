@@ -105,7 +105,7 @@
 
 
 
-                                        <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                                        <a href="{{ route('homepage.show', ['id' => $product->id]) }}" title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>

@@ -38,11 +38,11 @@
                 <form action="" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Username" name="username"
+                        <input type="text" class="form-control" placeholder="Username" name="username"
                             autocomplete="off" value="{{ old('username') }}">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <i class="bi bi-telephone-fill"></i>
+                                <i class="bi bi-envelope-at-fill"></i>
                             </div>
                         </div>
                     </div>

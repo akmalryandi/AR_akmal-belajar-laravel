@@ -24,7 +24,7 @@ class AuthController extends Controller
         if (Auth::attempt($infologin)) {
             return redirect('dashboard');
         }else {
-            return redirect('')->withErrors('Username dan Password salah !!!')->withInput();
+            return redirect('login')->withErrors('Username dan Password salah !!!')->withInput();
         }
     }
     function logout(){

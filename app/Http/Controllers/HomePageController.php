@@ -16,4 +16,9 @@ class HomePageController extends Controller
 
         return view('home.index', compact('products'));
     }
+
+    public function show($id){
+        $product = Product::find($id);
+        return view('home.detail', compact('product'));
+    }
 }

@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [HomePageController::class, 'index'])->name('homepage');
+Route::get('/product/show/{id}', [HomePageController::class, 'show'])->name('homepage.show');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/biodata', [BiodataController::class, 'index']);
